@@ -1,89 +1,77 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Siyah Altın Prodüksiyon · SK</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b0b0b;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
-    header {
-      background: #000;
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 2px solid #c9a227;
-    }
-    header h1 {
-      margin: 0;
-      color: #c9a227;
-      font-size: 34px;
-      letter-spacing: 2px;
-    }
-    header span {
-      font-size: 14px;
-      color: #aaa;
-      display: block;
-      margin-top: 6px;
-    }
-    nav {
-      background-color: #111;
-      padding: 12px;
-      text-align: center;
-    }
-    nav a {
-      color: #c9a227;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #c9a227;
-      border-bottom: 1px solid #333;
-      padding-bottom: 8px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 12px 0;
-      font-size: 16px;
-    }
-    .contact a {
-      color: #c9a227;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      background-color: #000;
-      text-align: center;
-      padding: 25px;
-      border-top: 2px solid #c9a227;
-      font-size: 14px;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Siyah Altın Prodüksiyon · SK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#0b0b0b;
+  color:#f2f2f2;
+}
+header{
+  background:#000;
+  text-align:center;
+  padding:40px 20px;
+  border-bottom:2px solid #c9a227;
+}
+header h1{
+  margin:0;
+  color:#c9a227;
+  letter-spacing:2px;
+}
+header p{
+  margin-top:8px;
+  color:#aaa;
+}
+nav{
+  background:#111;
+  text-align:center;
+  padding:12px;
+}
+nav a{
+  color:#c9a227;
+  margin:0 12px;
+  text-decoration:none;
+  font-weight:bold;
+}
+section{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+h2{
+  color:#c9a227;
+  border-bottom:1px solid #333;
+  padding-bottom:6px;
+}
+ul{
+  padding-left:20px;
+}
+li{
+  margin:10px 0;
+}
+footer{
+  background:#000;
+  text-align:center;
+  padding:20px;
+  border-top:2px solid #c9a227;
+  color:#aaa;
+}
+a{
+  color:#c9a227;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
-  <span>Hazır şarkılar • Altyapılar • Özel müzik üretimi</span>
+  <p>Hazır şarkılar • Altyapılar • Özel müzik üretimi</p>
 </header>
 
 <nav>
@@ -104,13 +92,17 @@
 <section id="hakkimizda">
   <h2>Hakkımızda</h2>
   <p>
-    Siyah Altın Prodüksiyon olarak profesyonel müzik prodüksiyonu, altyapı hazırlama
-    ve kişiye özel beste hizmetleri sunuyoruz. Kaliteli ses, özgün üretim ve güçlü
-    prodüksiyon anlayışıyla çalışıyoruz.
+    Siyah Altın Prodüksiyon olarak profesyonel müzik prodüksiyonu,
+    altyapı hazırlama ve kişiye özel beste hizmetleri sunuyoruz.
+    Kaliteli ses ve güçlü prodüksiyon anlayışıyla çalışıyoruz.
   </p>
 </section>
 
 <section id="hizmetler">
   <h2>Hizmetlerimiz</h2>
   <ul>
-    <li>🎵 Hazır Şarkılar</
+    <li>Hazır Şarkılar</li>
+    <li>Özel Altyapılar</li>
+    <li>Kişiye Özel Beste & Prodüksiyon</li>
+    <li>Mixing & Mastering</li>
+    <li>Vokal Kayıt & Düzenlem
