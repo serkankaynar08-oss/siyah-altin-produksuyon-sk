@@ -1,77 +1,127 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Siyah Altın Prodüksiyon · SK</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #111;
-      color: #f1f1f1;
-      line-height: 1.6;
-    }
-    header {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #1a1a1a;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: #f1f1f1;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #f5c400;
-    }
-    .track {
-      background: #1e1e1e;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-    }
-    audio {
-      width: 100%;
-      margin-top: 8px;
-    }
-    .box {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 6px;
-      margin-top: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 4px;
-      border: none;
-    }
-    button {
-      background: #f5c400;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Siyah Altın Prodüksiyon · SK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --dark:#0b0b0b;
+  --card:#151515;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:var(--dark);
+  color:#eee;
+}
+
+header{
+  text-align:center;
+  padding:40px 20px;
+  background:black;
+}
+
+header h1{
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#ccc;
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background:#111;
+  padding:10px;
+}
+
+nav a{
+  color:var(--gold);
+  text-decoration:none;
+  margin:8px 12px;
+  font-weight:600;
+}
+
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+h2{
+  color:var(--gold);
+  border-bottom:1px solid #333;
+  padding-bottom:10px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.track strong{
+  color:var(--gold);
+}
+
+audio{
+  width:100%;
+  margin-top:8px;
+}
+
+.buy{
+  margin-top:10px;
+  display:inline-block;
+  background:var(--gold);
+  color:black;
+  padding:8px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.admin{
+  display:none;
+}
+
+input, textarea, button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:6px;
+  border:none;
+}
+
+button{
+  background:var(--gold);
+  font-weight:bold;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:black;
+  color:#888;
+  font-size:14px;
+}
+
+@media(max-width:600px){
+  header h1{font-size:22px}
+  nav a{font-size:14px}
+}
+</style>
 </head>
 
 <body>
@@ -79,112 +129,115 @@
 <header>
   <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
   <p>Müzik Prodüksiyon · Açılış Organizasyonları · Sahne Hizmetleri</p>
-  <p><strong>Hazır Şarkılar • Altyapılar • Kişiye Özel Üretim</strong></p>
+  <p><strong>Hazır Şarkılar • Beatler • Kişiye Özel Üretim</strong></p>
 </header>
 
 <nav>
   <a href="#anasayfa">Ana Sayfa</a>
-  <a href="#hakkimizda">Hakkımızda</a>
   <a href="#muzik">Müzik</a>
-  <a href="#organizasyon">Açılış & Organizasyon</a>
+  <a href="#organizasyon">Organizasyon</a>
   <a href="#iletisim">İletişim</a>
+  <a href="#admin">Admin</a>
 </nav>
 
 <section id="anasayfa">
   <h2>Hoş Geldiniz</h2>
   <p>
-    Siyah Altın Prodüksiyon; müzik prodüksiyonu, iş yeri açılışları,
-    sahne kurulumu ve organizasyon hizmetleri alanında profesyonel çözümler sunar.
-  </p>
-</section>
-
-<section id="hakkimizda">
-  <h2>Hakkımızda</h2>
-  <p>
-    Müzik prodüksiyonu, özel altyapı üretimi, hazır şarkılar ve
-    açılış organizasyonları başta olmak üzere birçok alanda hizmet veriyoruz.
+    Siyah Altın Prodüksiyon; beat, şarkı üretimi ve açılış organizasyonlarında
+    profesyonel çözümler sunar.
   </p>
 </section>
 
 <section id="muzik">
-  <h2>🎵 Hazır Şarkılar</h2>
+  <h2>🎧 Beat & Şarkılar</h2>
 
-  <div class="track">
-    <strong>Şarkı Örneği 1</strong>
+  <div class="card track">
+    <strong>Beat 01 – Trap</strong>
+    <audio controls>
+      <source src="beat1.mp3" type="audio/mpeg">
+    </audio>
+    <a class="buy" href="https://wa.me/905074163605" target="_blank">Satın Al</a>
+  </div>
+
+  <div class="card track">
+    <strong>Şarkı 01 – Demo</strong>
     <audio controls>
       <source src="sarki1.mp3" type="audio/mpeg">
     </audio>
+    <a class="buy" href="https://wa.me/905074163605" target="_blank">Satın Al</a>
   </div>
 
-  <div class="track">
-    <strong>Şarkı Örneği 2</strong>
-    <audio controls>
-      <source src="sarki2.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <!-- 🔒 ADMIN BİLGİ -->
-  <!-- Yeni şarkı eklemek için bu bloğu çoğalt -->
-</section>
-
-<section id="mixler">
-  <h2>🎚 Mixler</h2>
-
-  <div class="track">
-    <strong>Mix Örneği 1</strong>
-    <audio controls>
-      <source src="mix1.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <div class="track">
-    <strong>Mix Örneği 2</strong>
-    <audio controls>
-      <source src="mix2.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <!-- 🔒 ADMIN BİLGİ -->
-  <!-- Yeni mix eklemek için bu bloğu kopyala -->
+  <!-- ADMIN EKLEME NOKTASI -->
+  <div id="musicList"></div>
 </section>
 
 <section id="organizasyon">
-  <h2>🏢 Açılış & Organizasyon Hizmetleri</h2>
+  <h2>🏢 Açılış & Sahne Hizmetleri</h2>
   <ul>
-    <li>İş Yeri & Mekan Açılış Organizasyonları</li>
-    <li>Kurdele Kesimi & Sunum</li>
-    <li>Sahne Kurulumu</li>
-    <li>DJ Performans</li>
-    <li>Ses Sistemi & Teknik Destek</li>
-    <li>Özel Davet & Etkinlikler</li>
+    <li>İş Yeri Açılışları</li>
+    <li>Kurdele Kesimi</li>
+    <li>DJ & Canlı Müzik</li>
+    <li>Ses Sistemi & Sahne</li>
   </ul>
 </section>
 
-<section class="box">
-  <h2>📢 Reklam Alanı</h2>
-  <p>Buraya sponsor, kampanya veya duyuru eklenebilir.</p>
+<section id="admin">
+  <h2>🔒 Admin Panel</h2>
+
+  <div class="card">
+    <input type="password" id="pass" placeholder="Admin Şifre">
+    <button onclick="login()">Giriş</button>
+  </div>
+
+  <div class="card admin" id="panel">
+    <h3>Yeni Beat / Şarkı Ekle</h3>
+    <input id="title" placeholder="Başlık">
+    <input id="file" placeholder="Dosya adı (örnek: beat2.mp3)">
+    <button onclick="addTrack()">Ekle</button>
+  </div>
 </section>
 
 <section id="iletisim">
   <h2>📩 İletişim</h2>
-
-  <div class="box">
-    <form>
-      <input type="text" placeholder="Adınız">
-      <input type="email" placeholder="E-posta">
-      <textarea rows="4" placeholder="Mesajınız"></textarea>
-      <button>Gönder</button>
-    </form>
-  </div>
-
   <p>📞 0507 416 36 05</p>
   <p>📧 skaynar578@gmail.com</p>
   <p>📸 Instagram: @siyahaltinproduksiyonsk</p>
 </section>
 
 <footer>
-  © 2026 Siyah Altın Prodüksiyon · SK
+© 2026 Siyah Altın Prodüksiyon · SK
 </footer>
+
+<script>
+const ADMIN_PASSWORD = "sk2026";
+
+function login(){
+  if(document.getElementById("pass").value === ADMIN_PASSWORD){
+    document.getElementById("panel").style.display="block";
+    alert("Admin girişi başarılı");
+  } else {
+    alert("Hatalı şifre");
+  }
+}
+
+function addTrack(){
+  const title = document.getElementById("title").value;
+  const file = document.getElementById("file").value;
+
+  if(!title || !file) return alert("Alanları doldur");
+
+  const div = document.createElement("div");
+  div.className="card track";
+  div.innerHTML = `
+    <strong>${title}</strong>
+    <audio controls>
+      <source src="${file}" type="audio/mpeg">
+    </audio>
+    <a class="buy" href="https://wa.me/905074163605" target="_blank">Satın Al</a>
+  `;
+  document.getElementById("musicList").appendChild(div);
+}
+</script>
 
 </body>
 </html>
