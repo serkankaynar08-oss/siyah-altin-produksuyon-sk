@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Siyah Altın Prodüksiyon</title>
+  <title>Siyah Altın Prodüksiyon · SK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -10,27 +10,29 @@
       font-family: Arial, Helvetica, sans-serif;
       background-color: #0b0b0b;
       color: #f5f5f5;
+      line-height: 1.6;
     }
     header {
-      background: linear-gradient(90deg, #000000, #1a1a1a);
-      padding: 20px;
+      background: #000;
+      padding: 40px 20px;
       text-align: center;
       border-bottom: 2px solid #c9a227;
     }
     header h1 {
       margin: 0;
       color: #c9a227;
-      font-size: 32px;
+      font-size: 34px;
       letter-spacing: 2px;
     }
-    header p {
-      margin-top: 8px;
-      color: #ddd;
+    header span {
       font-size: 14px;
+      color: #aaa;
+      display: block;
+      margin-top: 6px;
     }
     nav {
       background-color: #111;
-      padding: 10px;
+      padding: 12px;
       text-align: center;
     }
     nav a {
@@ -38,12 +40,13 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 15px;
     }
     nav a:hover {
       text-decoration: underline;
     }
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 900px;
       margin: auto;
     }
@@ -57,18 +60,21 @@
       padding: 0;
     }
     ul li {
-      margin: 10px 0;
+      margin: 12px 0;
       font-size: 16px;
+    }
+    .contact a {
+      color: #c9a227;
+      text-decoration: none;
+      font-weight: bold;
     }
     footer {
       background-color: #000;
       text-align: center;
       padding: 25px;
       border-top: 2px solid #c9a227;
-    }
-    footer a {
-      color: #c9a227;
-      text-decoration: none;
+      font-size: 14px;
+      color: #aaa;
     }
   </style>
 </head>
@@ -77,7 +83,7 @@
 
 <header>
   <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
-  <p>Hazır şarkılar • Altyapılar • Özel müzik üretimi</p>
+  <span>Hazır şarkılar • Altyapılar • Özel müzik üretimi</span>
 </header>
 
 <nav>
@@ -107,29 +113,4 @@
 <section id="hizmetler">
   <h2>Hizmetlerimiz</h2>
   <ul>
-    <li>🎵 Hazır Şarkılar</li>
-    <li>🎧 Özel Altyapılar</li>
-    <li>🎼 Kişiye Özel Beste & Prodüksiyon</li>
-    <li>🎚 Mixing & Mastering</li>
-    <li>🎤 Vokal Kayıt & Düzenleme</li>
-  </ul>
-</section>
-
-<section id="iletisim">
-  <h2>İletişim</h2>
-  <p>Bizimle hemen iletişime geçin:</p>
-  <p>📞 <strong>0507 416 36 05</strong></p>
-  <p>📧 <strong>skaynar578@gmail.com</strong></p>
-  <p>📸 Instagram:
-    <a href="https://instagram.com/siyahaltinproduksiyonsk" target="_blank">
-      @siyahaltinproduksiyonsk
-    </a>
-  </p>
-</section>
-
-<footer>
-  <p>© 2026 Siyah Altın Prodüksiyon · SK</p>
-</footer>
-
-</body>
-</html>
+    <li>🎵 Hazır Şarkılar</
