@@ -2,79 +2,117 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Siyah Altın Prodüksiyon · SK</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b0b0b;
-  color:#f5d27a;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #f5d36a;
 }
-header{
-  text-align:center;
-  padding:30px 15px;
+header {
+  background: #000;
+  padding: 20px;
+  text-align: center;
 }
-nav{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:10px;
-  background:#111;
+header h1 {
+  margin: 0;
+  font-size: 28px;
 }
-nav a{
-  color:#f5d27a;
-  text-decoration:none;
-  font-weight:bold;
+header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #d4af37;
 }
-section{
-  padding:30px 15px;
-  max-width:900px;
-  margin:auto;
+nav {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
 }
-h1,h2,h3{color:#f5d27a;}
-.card{
-  background:#111;
-  padding:15px;
-  margin:10px 0;
-  border-radius:8px;
+nav a {
+  color: #f5d36a;
+  text-decoration: none;
+  font-weight: bold;
 }
-.btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 14px;
-  background:#f5d27a;
-  color:#000;
-  text-decoration:none;
-  border-radius:5px;
-  font-weight:bold;
+section {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
 }
-#admin-login, #admin-panel{
-  background:#111;
-  padding:20px;
-  margin-top:30px;
-  border-radius:8px;
+h2 {
+  border-bottom: 1px solid #d4af37;
+  padding-bottom: 5px;
 }
-input{
-  padding:8px;
-  width:100%;
-  margin:5px 0;
+.card {
+  background: #111;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #d4af37;
 }
-footer{
-  text-align:center;
-  padding:20px;
-  background:#111;
-  color:#888;
+.buy-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #d4af37;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer {
+  background: #000;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+input, button {
+  padding: 8px;
+  margin-top: 10px;
+  width: 100%;
+}
+button {
+  background: #d4af37;
+  border: none;
+  font-weight: bold;
+}
+.admin-panel {
+  display: none;
+  margin-top: 20px;
+  background: #000;
+  padding: 15px;
+  border: 1px solid #d4af37;
 }
 </style>
+
+<script>
+function buyMessage() {
+  const msg = encodeURIComponent(
+    "Merhaba, Siyah Altın Prodüksiyon web sitesi üzerinden yazıyorum.\nBu içerik hakkında bilgi alabilir miyim?"
+  );
+  window.open("https://wa.me/905074163605?text=" + msg, "_blank");
+}
+
+function adminLogin() {
+  const pass = document.getElementById("adminPass").value;
+  if (pass === "sk123") {
+    document.getElementById("adminPanel").style.display = "block";
+    alert("Admin girişi başarılı");
+  } else {
+    alert("Şifre yanlış");
+  }
+}
+</script>
 </head>
 
 <body>
 
 <header>
-  <h1 id="mainTitle">SİYAH ALTIN PRODÜKSİYON · SK</h1>
+  <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
   <p>Müzik Prodüksiyon · Açılış Organizasyonları · Sahne Hizmetleri</p>
-  <p><strong>Hazır Şarkılar • Beatler • Kişiye Özel Üretim</strong></p>
+  <p>Hazır Şarkılar • Beatler • Kişiye Özel Üretim</p>
 </header>
 
 <nav>
@@ -95,32 +133,50 @@ footer{
 <section id="muzik">
   <h2>🎧 Beatler & Mixler</h2>
 
-  <div id="icerikListesi">
-    <div class="card">
-      <strong>Beat 01 – Trap</strong><br>
-      <a class="btn" target="_blank"
-      href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%0ABu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
-      Satın Al
-      </a>
-    </div>
+  <div class="card">
+    <strong>Beat 01 – Trap</strong><br>
+    <a class="buy-btn" onclick="buyMessage()">Satın Al</a>
+  </div>
 
-    <div class="card">
-      <strong>Arabesk Mix</strong><br>
-      <a class="btn" target="_blank"
-      href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%0ABu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
-      Satın Al
-      </a>
-    </div>
+  <div class="card">
+    <strong>Beat 02 – Drill</strong><br>
+    <a class="buy-btn" onclick="buyMessage()">Satın Al</a>
+  </div>
+
+  <div class="card">
+    <strong>Arabesk Mix</strong><br>
+    <a class="buy-btn" onclick="buyMessage()">Satın Al</a>
+  </div>
+
+  <div class="card">
+    <strong>Arabesk Pop Mix</strong><br>
+    <a class="buy-btn" onclick="buyMessage()">Satın Al</a>
+  </div>
+
+  <div class="card">
+    <strong>Türkü Mix</strong><br>
+    <a class="buy-btn" onclick="buyMessage()">Satın Al</a>
+  </div>
+
+  <div class="card">
+    <strong>Club Mix</strong><br>
+    <a class="buy-btn" onclick="buyMessage()">Satın Al</a>
+  </div>
+
+  <div class="card">
+    <strong>Canlı Performans Mix</strong><br>
+    <a class="buy-btn" onclick="buyMessage()">Satın Al</a>
   </div>
 </section>
 
 <section id="organizasyon">
   <h2>🏢 Açılış & Sahne Hizmetleri</h2>
   <ul>
-    <li>İş Yeri & Mekan Açılışları</li>
+    <li>İş Yeri & Mekan Açılış Organizasyonları</li>
     <li>Kurdele Kesimi & Sunum</li>
     <li>DJ & Canlı Müzik</li>
     <li>Ses Sistemi & Sahne Kurulumu</li>
+    <li>Özel Davet & Etkinlikler</li>
   </ul>
 </section>
 
@@ -132,48 +188,25 @@ footer{
 </section>
 
 <section id="admin">
-  <div id="admin-login">
-    <h3>🔒 Admin Girişi</h3>
-    <input type="password" id="adminPass" placeholder="Admin Şifre">
-    <button class="btn" onclick="adminGiris()">Giriş</button>
-  </div>
+  <h2>🔒 Admin Girişi</h2>
+  <input type="password" id="adminPass" placeholder="Admin Şifre">
+  <button onclick="adminLogin()">Giriş</button>
 
-  <div id="admin-panel" style="display:none;">
+  <div class="admin-panel" id="adminPanel">
     <h3>🛠 Admin Panel</h3>
-    <input type="text" id="icerikAdi" placeholder="Yeni Beat / Şarkı / Mix">
-    <button class="btn" onclick="icerikEkle()">Ekle</button>
+    <p>Yeni şarkı / beat eklemek için aşağıdaki bloğu çoğalt:</p>
+<pre>
+&lt;div class="card"&gt;
+  &lt;strong&gt;Şarkı Adı&lt;/strong&gt;&lt;br&gt;
+  &lt;a class="buy-btn" onclick="buyMessage()"&gt;Satın Al&lt;/a&gt;
+&lt;/div&gt;
+</pre>
   </div>
 </section>
 
 <footer>
   © 2026 Siyah Altın Prodüksiyon · SK
 </footer>
-
-<script>
-function adminGiris(){
-  if(document.getElementById("adminPass").value==="SK2026"){
-    document.getElementById("admin-login").style.display="none";
-    document.getElementById("admin-panel").style.display="block";
-  }else{
-    alert("Yetkisiz giriş");
-  }
-}
-
-function icerikEkle(){
-  let ad=document.getElementById("icerikAdi").value;
-  if(!ad)return;
-  let div=document.createElement("div");
-  div.className="card";
-  div.innerHTML=`
-    <strong>${ad}</strong><br>
-    <a class="btn" target="_blank"
-    href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%0ABu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
-    Satın Al
-    </a>`;
-  document.getElementById("icerikListesi").appendChild(div);
-  document.getElementById("icerikAdi").value="";
-}
-</script>
 
 </body>
 </html>
