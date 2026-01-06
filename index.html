@@ -7,76 +7,80 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#0b0b0b;
   color:#d4af37;
   text-align:center;
-  font-size:17px;
 }
 
 header{
-  padding:30px 15px;
+  padding:30px 15px 10px;
 }
 
 h1{
-  font-size:36px;
-  margin-bottom:5px;
+  margin:0;
+  font-size:34px;
+  letter-spacing:1px;
 }
 
 .subtitle{
-  font-size:18px;
-  margin-bottom:10px;
-}
-
-.notice{
-  font-size:14px;
-  max-width:900px;
-  margin:0 auto 25px;
+  margin-top:8px;
+  font-size:16px;
   opacity:0.9;
 }
 
+.notice{
+  margin:20px auto 30px;
+  max-width:900px;
+  font-size:16px;
+  font-weight:bold;
+  letter-spacing:0.5px;
+  border:1px solid #d4af37;
+  padding:12px 15px;
+  border-radius:8px;
+}
+
 nav{
-  margin:20px 0;
+  margin:20px 0 30px;
 }
 
 nav a{
   color:#d4af37;
   text-decoration:none;
-  margin:0 12px;
-  font-weight:bold;
+  margin:0 15px;
+  font-size:16px;
 }
 
 section{
-  max-width:900px;
-  margin:40px auto;
+  max-width:1000px;
+  margin:0 auto 40px;
   padding:0 15px;
 }
 
 h2{
-  font-size:26px;
   margin-bottom:20px;
+  font-size:26px;
 }
 
-.player-box{
-  margin:15px 0;
+.track{
+  margin-bottom:25px;
 }
 
 audio{
   width:260px;
+  margin-top:8px;
 }
 
-.buy-btn{
+.buy{
   display:inline-block;
   margin-top:8px;
-  padding:6px 16px;
+  padding:6px 14px;
   border:1px solid #d4af37;
-  color:#d4af37;
-  text-decoration:none;
   border-radius:20px;
   font-size:14px;
 }
 
-.footer{
+footer{
   margin:40px 0 20px;
   font-size:14px;
   opacity:0.8;
@@ -88,93 +92,83 @@ audio{
 
 <header>
   <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
-  <div class="subtitle">Müzik Prodüksiyon · Açılış Organizasyonları</div>
-
-  <div class="notice">
-    Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri Serkan Kaynar’a aittir.  
-    Tüm hakları saklıdır.
+  <div class="subtitle">
+    Müzik Prodüksiyon · Açılış Organizasyonları
   </div>
-
-  <nav>
-    <a href="#">Müzik</a>
-    <a href="#">Organizasyon</a>
-    <a href="#">İletişim</a>
-  </nav>
 </header>
 
-<section>
-  <p>
-    Siyah Altın Prodüksiyon; beat, hazır şarkı, mix üretimi ve  
-    mekan açılış organizasyonlarında profesyonel çözümler sunar.
-  </p>
-</section>
+<div class="notice">
+  Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri Serkan Kaynar’a aittir.  
+  Tüm hakları saklıdır.
+</div>
 
-<section>
-  <h2>🏢 Mekan Açılış Organizasyonları</h2>
-  <p>Mekan Açılışları</p>
-  <p>Kurdele Kesimi</p>
-  <p>DJ & Müzik Yayını</p>
-</section>
+<nav>
+  <a href="#">Müzik</a>
+  <a href="#">Organizasyon</a>
+  <a href="#">İletişim</a>
+</nav>
 
 <section>
   <h2>🎧 Karışık Mixler</h2>
 
-  <div class="player-box">
+  <div class="track">
     <strong>Karışık Mix</strong><br>
     <audio controls>
       <source src="1.mp3.mp3" type="audio/mpeg">
     </audio><br>
-    <a class="buy-btn" 
-       href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?"
-       target="_blank">Satın Al</a>
+    <div class="buy">Satın Al</div>
   </div>
 
-  <div class="player-box">
+  <div class="track">
     <strong>Arabesk Mix</strong><br>
     <audio controls>
       <source src="arabesk.mp3" type="audio/mpeg">
-    </audio>
+    </audio><br>
+    <div class="buy">Satın Al</div>
   </div>
 
-  <div class="player-box">
+  <div class="track">
     <strong>Arabesk Pop Mix</strong><br>
     <audio controls>
       <source src="arabesk-pop.mp3" type="audio/mpeg">
-    </audio>
+    </audio><br>
+    <div class="buy">Satın Al</div>
   </div>
 
-  <div class="player-box">
+  <div class="track">
     <strong>Türkü Mix</strong><br>
     <audio controls>
       <source src="turku.mp3" type="audio/mpeg">
-    </audio>
+    </audio><br>
+    <div class="buy">Satın Al</div>
   </div>
 
-  <div class="player-box">
-    <strong>Pop Mix</strong><br>
+  <div class="track">
+    <strong>Pop / Slow Pop Mix</strong><br>
     <audio controls>
-      <source src="pop.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <div class="player-box">
-    <strong>Slow Pop Mix</strong><br>
-    <audio controls>
-      <source src="slow-pop.mp3" type="audio/mpeg">
-    </audio>
+      <source src="pop-slow.mp3" type="audio/mpeg">
+    </audio><br>
+    <div class="buy">Satın Al</div>
   </div>
 </section>
 
 <section>
-  <h2>📩 İletişim</h2>
-  <p>WhatsApp: 0507 416 36 05</p>
-  <p>E-posta: skaynar578@gmail.com</p>
-  <p>Instagram: @siyahaltinproduksiyonsk</p>
+  <h2>🏢 Mekan Açılış Organizasyonları</h2>
+  Mekan Açılışları<br><br>
+  Kurdele Kesimi<br><br>
+  DJ & Müzik Yayını
 </section>
 
-<div class="footer">
+<section>
+  <h2>📩 İletişim</h2>
+  WhatsApp: 0507 416 36 05<br><br>
+  E-posta: skaynar578@gmail.com<br><br>
+  Instagram: @siyahaltinproduksiyonsk
+</section>
+
+<footer>
   © 2026 Siyah Altın Prodüksiyon · SK
-</div>
+</footer>
 
 </body>
 </html>
