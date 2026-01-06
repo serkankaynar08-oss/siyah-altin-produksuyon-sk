@@ -8,100 +8,73 @@
 <style>
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#0b0b0b;
-  color:#e5e5e5;
+  color:#f5d27a;
 }
 header{
+  background:#000;
+  padding:20px;
   text-align:center;
-  padding:30px 15px;
-  border-bottom:1px solid #333;
 }
-header h1{
-  color:gold;
-  margin:0;
-}
-header p{
-  margin:8px 0 0;
-  color:#c9a227;
-}
+header h1{margin:0;font-size:28px;}
+header p{margin:5px 0 0;font-size:14px;color:#c9a94a;}
 
 nav{
+  background:#111;
   display:flex;
   justify-content:center;
   gap:20px;
-  padding:15px;
-  border-bottom:1px solid #333;
+  padding:10px;
 }
 nav a{
-  color:gold;
+  color:#f5d27a;
   text-decoration:none;
   font-weight:bold;
 }
 
 section{
-  padding:30px 20px;
+  padding:30px 15px;
   max-width:900px;
   margin:auto;
 }
 
 h2{
-  color:gold;
-  border-bottom:1px solid #333;
+  border-bottom:1px solid #c9a94a;
   padding-bottom:8px;
 }
 
 .track{
-  margin:20px 0;
+  background:#111;
+  padding:15px;
+  margin:15px 0;
+  border:1px solid #c9a94a;
 }
-.track strong{
-  color:#c9a227;
-  display:block;
-  margin-bottom:6px;
-}
-audio{
-  width:100%;
-  margin-top:5px;
-}
+.track strong{display:block;margin-bottom:8px;}
+
+audio{width:100%;}
 
 .buy-btn{
   display:inline-block;
-  margin-top:8px;
+  margin-top:10px;
   padding:8px 14px;
-  background:#c9a227;
-  color:black;
+  background:#c9a94a;
+  color:#000;
   text-decoration:none;
-  border-radius:6px;
   font-weight:bold;
-}
-.buy-btn:hover{
-  background:#e6c75a;
 }
 
 footer{
+  background:#000;
   text-align:center;
   padding:20px;
-  border-top:1px solid #333;
   font-size:14px;
-  color:#aaa;
 }
-
 .admin{
-  border:1px solid #333;
+  background:#080808;
+  border:1px dashed #c9a94a;
   padding:15px;
   margin-top:20px;
-}
-.admin input{
-  width:100%;
-  padding:8px;
-  margin-top:8px;
-}
-.admin button{
-  margin-top:10px;
-  padding:8px 14px;
-  background:gold;
-  border:none;
-  font-weight:bold;
 }
 </style>
 </head>
@@ -111,7 +84,7 @@ footer{
 <header>
   <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
   <p>Müzik Prodüksiyon · Açılış Organizasyonları · Sahne Hizmetleri</p>
-  <p><strong>Hazır Şarkılar • Beatler • Kişiye Özel Üretim</strong></p>
+  <p>Hazır Şarkılar • Beatler • Kişiye Özel Üretim</p>
 </header>
 
 <nav>
@@ -124,61 +97,71 @@ footer{
 <section>
   <h2>Hoş Geldiniz</h2>
   <p>
-    Siyah Altın Prodüksiyon; beat, hazır şarkı, mix ve açılış organizasyonlarında
-    profesyonel çözümler sunar.
+    Siyah Altın Prodüksiyon; beat, hazır şarkı, mix üretimi ve açılış
+    organizasyonlarında profesyonel çözümler sunar.
   </p>
 </section>
 
 <section id="muzik">
-  <h2>🎧 Beatler & Mixler</h2>
+  <h2>🎧 Beatler</h2>
 
   <div class="track">
-    <strong>Beat 01 – Trap (Demo)</strong>
+    <strong>Beat 01 – Trap</strong>
     <audio controls>
-      <source src="beat-trap-demo.mp3" type="audio/mpeg">
+      <source src="beat1.mp3" type="audio/mpeg">
     </audio>
-    <a class="buy-btn" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
+    <a class="buy-btn"
+    href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
+    Satın Al
+    </a>
   </div>
 
   <div class="track">
-    <strong>Beat 02 – Drill (Demo)</strong>
+    <strong>Beat 02 – Drill</strong>
     <audio controls>
-      <source src="beat-drill-demo.mp3" type="audio/mpeg">
+      <source src="beat2.mp3" type="audio/mpeg">
     </audio>
-    <a class="buy-btn" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
+    <a class="buy-btn"
+    href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
+    Satın Al
+    </a>
+  </div>
+
+  <h2>🎛️ Mixler</h2>
+
+  <div class="track">
+    <strong>Arabesk Mix</strong>
+    <audio controls>
+      <source src="mix-arabesk.mp3" type="audio/mpeg">
+    </audio>
+    <a class="buy-btn"
+    href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
+    Satın Al
+    </a>
   </div>
 
   <div class="track">
-    <strong>Arabesk Karışık Mix (Demo)</strong>
+    <strong>Pop Mix</strong>
     <audio controls>
-      <source src="arabesk-mix-demo.mp3" type="audio/mpeg">
+      <source src="mix-pop.mp3" type="audio/mpeg">
     </audio>
-    <a class="buy-btn" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
+    <a class="buy-btn"
+    href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
+    Satın Al
+    </a>
   </div>
 
   <div class="track">
-    <strong>Pop Karışık Mix (Demo)</strong>
+    <strong>Karışık Mix (Arabesk / Pop / Club / Slow)</strong>
     <audio controls>
-      <source src="pop-mix-demo.mp3" type="audio/mpeg">
+      <source src="mix-karisik.mp3" type="audio/mpeg">
     </audio>
-    <a class="buy-btn" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
+    <a class="buy-btn"
+    href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
+    Satın Al
+    </a>
   </div>
 
-  <div class="track">
-    <strong>Club Karışık Mix (Demo)</strong>
-    <audio controls>
-      <source src="club-mix-demo.mp3" type="audio/mpeg">
-    </audio>
-    <a class="buy-btn" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
-  </div>
-
-  <div class="track">
-    <strong>Slow Karışık Mix (Demo)</strong>
-    <audio controls>
-      <source src="slow-mix-demo.mp3" type="audio/mpeg">
-    </audio>
-    <a class="buy-btn" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
-  </div>
 </section>
 
 <section id="organizasyon">
@@ -186,7 +169,8 @@ footer{
   <ul>
     <li>İş Yeri & Mekan Açılışları</li>
     <li>Kurdele Kesimi & Sunum</li>
-    <li>DJ & Müzik Yayını</li>
+    <li>DJ Performans Hizmetleri</li>
+    <li>Özel Davet & Etkinlikler</li>
   </ul>
 </section>
 
@@ -198,22 +182,22 @@ footer{
 </section>
 
 <section id="admin">
-  <h2>🔒 Admin Panel</h2>
+  <h2>🔒 Admin Bilgi</h2>
   <div class="admin">
-    <p>Yeni şarkı eklemek için aşağıdaki bloğu çoğalt:</p>
-<pre>
+    Yeni şarkı eklemek için bu bloğu çoğalt:
+    <pre>
 &lt;div class="track"&gt;
   &lt;strong&gt;Şarkı Adı&lt;/strong&gt;
   &lt;audio controls&gt;
     &lt;source src="dosyaadi.mp3" type="audio/mpeg"&gt;
   &lt;/audio&gt;
 &lt;/div&gt;
-</pre>
+    </pre>
   </div>
 </section>
 
 <footer>
-© 2026 Siyah Altın Prodüksiyon · SK
+  © 2026 Siyah Altın Prodüksiyon · SK
 </footer>
 
 </body>
