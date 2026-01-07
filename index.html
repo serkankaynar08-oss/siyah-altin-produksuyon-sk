@@ -22,50 +22,55 @@ nav a{
 }
 section{ padding:20px 15px; }
 h1,h2,h3{ margin:12px 0; }
-.sub{ font-size:18px; font-weight:bold; margin:6px 0; }
-.notice{ margin:15px 0; font-size:16px; font-weight:bold; }
-
+.sub{
+    font-size:18px;
+    font-weight:bold;
+    margin:6px 0;
+}
+.notice{
+    margin:15px 0;
+    font-size:16px;
+    font-weight:bold;
+}
 .player-box{
     border:1px solid #d4af37;
     padding:15px;
     margin:20px auto;
     max-width:420px;
 }
-
+#nowPlaying{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+audio{
+    width:100%;
+    height:32px;
+}
 .category{
     margin:20px auto;
     max-width:420px;
     border:1px solid #d4af37;
     padding:10px;
 }
-
+.category h3{
+    cursor:pointer;
+    margin:0;
+}
+.track-list{
+    display:none;
+    margin-top:10px;
+}
+.track-list div{
+    padding:6px;
+    cursor:pointer;
+    border-bottom:1px solid #333;
+}
+.track-list div:hover{
+    background:#1a1a1a;
+}
 footer{
     padding:20px 10px;
     font-size:14px;
-}
-
-/* 🔒 ADMIN PANEL (GİZLİ) */
-#adminPanel{
-    display:none;
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    background:#0b0b0b;
-    border:2px solid #d4af37;
-    padding:20px;
-    z-index:9999;
-    max-width:300px;
-}
-#adminPanel h3{ margin-top:0; }
-.admin-btn{
-    margin-top:10px;
-    padding:6px 14px;
-    background:#d4af37;
-    color:#000;
-    border:none;
-    font-weight:bold;
-    cursor:pointer;
 }
 </style>
 </head>
@@ -74,54 +79,121 @@ footer{
 
 <header>
     <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
+
     <div class="notice">
         Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri  
         <strong>Serkan Kaynar</strong>’a aittir.  
         Tüm hakları saklıdır.
     </div>
+
     <div class="sub">Müzik Prodüksiyon · Açılış Organizasyonları</div>
     <div class="sub">Hazır Şarkılar • Beatler • Mixler</div>
     <div class="sub">Satışa ve Devire Hazır İçerikler</div>
+
+    <nav>
+        <a href="#">Müzik</a>
+        <a href="#">Organizasyon</a>
+    </nav>
 </header>
 
 <section>
-    <div class="player-box">🎧 Müzik Player</div>
 
-    <div class="category">Pop</div>
-    <div class="category">Slow Pop</div>
-    <div class="category">Arabesk</div>
+    <!-- TEK PLAYER -->
+    <div class="player-box">
+        <div id="nowPlaying">Seçili şarkı yok</div>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+    <!-- YENİLER -->
+    <div class="category">
+        <h3 onclick="toggleList('yeniler')">Yeniler</h3>
+        <div class="track-list" id="yeniler">
+            <div onclick="playTrack('Yeniler Mix','1.mp3.mp3')">
+                Yeniler Mix
+            </div>
+        </div>
+    </div>
+
+    <!-- ARABESK (SADECE BURAYA EKLENDİ) -->
+    <div class="category">
+        <h3 onclick="toggleList('arabesk')">Arabesk</h3>
+        <div class="track-list" id="arabesk">
+            <div onclick="playTrack('Küllerimden Kalktım – Arabesk','kullerimden-kalktim.mp3.mp3')">
+                Küllerimden Kalktım – Arabesk
+            </div>
+        </div>
+    </div>
+
+    <!-- ARABESK POP KARISIMI -->
+    <div class="category">
+        <h3 onclick="toggleList('arabeskpop')">Arabesk Pop Karışımı</h3>
+        <div class="track-list" id="arabeskpop">
+            <div onclick="playTrack('Dünya Benim Olurdu – Arabesk Pop Karışımı','dunya-benim-olurdu.mp3.mp3')">
+                Dünya Benim Olurdu – Arabesk Pop Karışımı
+            </div>
+        </div>
+    </div>
+
+    <!-- TÜRKÜ -->
+    <div class="category">
+        <h3 onclick="toggleList('turku')">Türkü</h3>
+        <div class="track-list" id="turku">
+            <div onclick="playTrack('Bu Geçer – Türkü','bu-gecer-turku.mp3.mp3')">
+                Bu Geçer – Türkü
+            </div>
+        </div>
+    </div>
+
+    <!-- POP -->
+    <div class="category">
+        <h3 onclick="toggleList('pop')">Pop</h3>
+        <div class="track-list" id="pop">
+            <div onclick="playTrack('Korkuyorum','pop01.mp3')">
+                Korkuyorum
+            </div>
+        </div>
+    </div>
+
+    <!-- SLOW POP -->
+    <div class="category">
+        <h3 onclick="toggleList('slowpop')">Slow Pop</h3>
+        <div class="track-list" id="slowpop">
+            <div onclick="playTrack('Kırık Düşler – Slow Pop','kirik-dusler.mp3.mp3')">
+                Kırık Düşler – Slow Pop
+            </div>
+        </div>
+    </div>
+
 </section>
 
 <footer>
+    📞 WhatsApp: 0507 416 36 05<br>
+    📧 skaynar578@gmail.com<br>
+    📸 @siyahaltinproduksiyonsk<br><br>
     © 2026 Siyah Altın Prodüksiyon · SK
 </footer>
 
-<!-- 🔒 ADMIN PANEL -->
-<div id="adminPanel">
-    <h3>🔐 Admin Panel</h3>
-    <p>Bu alan sadece sana görünür.</p>
-    <button class="admin-btn" onclick="alert('Buraya şarkı ekleme / silme gelecek')">
-        Şarkı Yönetimi
-    </button><br>
-    <button class="admin-btn" onclick="closeAdmin()">
-        Kapat
-    </button>
-</div>
-
 <script>
-const ADMIN_PASSWORD = "SK2026";
+const player = document.getElementById("audioPlayer");
+const nowPlaying = document.getElementById("nowPlaying");
 
-document.addEventListener("keydown", function(e){
-    if(e.ctrlKey && e.altKey && e.key.toLowerCase() === "a"){
-        const pass = prompt("Admin şifresi:");
-        if(pass === ADMIN_PASSWORD){
-            document.getElementById("adminPanel").style.display = "block";
+function playTrack(name, file){
+    if(player.src.includes(file)){
+        if(player.paused){
+            player.play();
+        }else{
+            player.pause();
         }
+    }else{
+        player.src = file;
+        nowPlaying.textContent = "Çalan Şarkı: " + name;
+        player.play();
     }
-});
+}
 
-function closeAdmin(){
-    document.getElementById("adminPanel").style.display = "none";
+function toggleList(id){
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === "block" ? "none" : "block";
 }
 </script>
 
