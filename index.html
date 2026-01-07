@@ -39,8 +39,13 @@ h1,h2{margin:10px 0;}
 
 audio{display:none;}
 
+.progress{
+    width:100%;
+    margin:8px 0;
+}
+
 .controls{
-    margin-top:8px;
+    margin-top:6px;
 }
 .controls button{
     background:none;
@@ -108,18 +113,19 @@ Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
 
 <div id="nowPlaying">🎵 Çalan Müzik: —</div>
 
-<!-- ŞARKI 1 -->
 <div class="track">
 <strong>Kırık Düşler – Slow Pop</strong>
 
-<audio class="player" data-title="Kırık Düşler – Slow Pop">
+<audio id="audio" data-title="Kırık Düşler – Slow Pop">
 <source src="1.mp3.mp3" type="audio/mpeg">
 </audio>
 
+<input type="range" id="progress" class="progress" value="0">
+
 <div class="controls">
-<button onclick="prevTrack()">⏮</button>
-<button onclick="togglePlay()">▶</button>
-<button onclick="nextTrack()">⏭</button>
+<button onclick="prev()">⏮</button>
+<button onclick="playPause()" id="playBtn">▶</button>
+<button onclick="next()">⏭</button>
 </div>
 
 <a class="buy" target="_blank"
@@ -137,42 +143,36 @@ Satın Al</a>
 </footer>
 
 <script>
-const players = document.querySelectorAll(".player");
-const playBtn = document.querySelector(".controls button:nth-child(2)");
+const audio = document.getElementById("audio");
+const progress = document.getElementById("progress");
+const playBtn = document.getElementById("playBtn");
 const nowText = document.getElementById("nowPlaying");
-let current = 0;
 
-function updateText(){
-    nowText.innerText = "🎵 Çalan Müzik: " + players[current].dataset.title;
-}
-
-function togglePlay(){
-    const audio = players[current];
-
+function playPause(){
     if(audio.paused){
-        players.forEach(p => p.pause());
         audio.play();
         playBtn.innerText = "⏸";
-        updateText();
+        nowText.innerText = "🎵 Çalan Müzik: " + audio.dataset.title;
     }else{
         audio.pause();
         playBtn.innerText = "▶";
-        nowText.innerText = "⏸ Duraklatıldı: " + audio.dataset.title;
     }
 }
 
-function nextTrack(){
-    players[current].pause();
-    current = (current + 1) % players.length;
-    playBtn.innerText = "▶";
-    togglePlay();
+audio.addEventListener("timeupdate", () => {
+    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
+});
+
+progress.addEventListener("input", () => {
+    audio.currentTime = (progress.value / 100) * audio.duration;
+});
+
+function next(){
+    audio.currentTime = audio.duration;
 }
 
-function prevTrack(){
-    players[current].pause();
-    current = (current - 1 + players.length) % players.length;
-    playBtn.innerText = "▶";
-    togglePlay();
+function prev(){
+    audio.currentTime = 0;
 }
 </script>
 
