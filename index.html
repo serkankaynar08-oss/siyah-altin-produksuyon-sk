@@ -108,9 +108,7 @@ footer{
     <div class="category">
         <h3 onclick="toggleList('yeniler')">Yeniler</h3>
         <div class="track-list" id="yeniler">
-            <div onclick="playTrack('Yeniler Mix','1.mp3.mp3')">
-                Yeniler Mix
-            </div>
+            <div onclick="playTrack('Yeniler Mix','1.mp3.mp3')">Yeniler Mix</div>
         </div>
     </div>
 
@@ -124,7 +122,7 @@ footer{
         </div>
     </div>
 
-    <!-- ARABESK POP KARISIMI -->
+    <!-- ARABESK POP -->
     <div class="category">
         <h3 onclick="toggleList('arabeskpop')">Arabesk Pop Karışımı</h3>
         <div class="track-list" id="arabeskpop">
@@ -148,9 +146,7 @@ footer{
     <div class="category">
         <h3 onclick="toggleList('pop')">Pop</h3>
         <div class="track-list" id="pop">
-            <div onclick="playTrack('Korkuyorum','pop01.mp3')">
-                Korkuyorum
-            </div>
+            <div onclick="playTrack('Korkuyorum','pop01.mp3')">Korkuyorum</div>
         </div>
     </div>
 
@@ -167,7 +163,7 @@ footer{
     <!-- MÜZİK ORGANİZASYON -->
     <section>
         <h2>🎶 Müzik Organizasyon</h2>
-        <h3>🏢 Mağaza & Mekan Açılış Organizasyonları</h3>
+        <p><strong>🏢 Mağaza & Mekan Açılış Organizasyonları</strong></p>
         <p>Mekan Açılışları</p>
         <p>Kurdele Kesimi</p>
         <p>DJ & Müzik Yayını</p>
@@ -188,11 +184,7 @@ const nowPlaying = document.getElementById("nowPlaying");
 
 function playTrack(name, file){
     if(player.src.includes(file)){
-        if(player.paused){
-            player.play();
-        }else{
-            player.pause();
-        }
+        player.paused ? player.play() : player.pause();
     }else{
         player.src = file;
         nowPlaying.textContent = "Çalan Şarkı: " + name;
