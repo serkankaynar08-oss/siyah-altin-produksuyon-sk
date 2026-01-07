@@ -54,19 +54,20 @@ audio{
 }
 .category h3{
     cursor:pointer;
-    margin:0;
-}
-.track-list{
-    display:none;
-    margin-top:10px;
+    margin:0 0 10px 0;
 }
 .track-list div{
     padding:6px;
-    cursor:pointer;
     border-bottom:1px solid #333;
 }
-.track-list div:hover{
-    background:#1a1a1a;
+.buy-btn{
+    margin-top:10px;
+    padding:6px 14px;
+    background:#d4af37;
+    color:#000;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
 }
 footer{
     padding:20px 10px;
@@ -98,76 +99,49 @@ footer{
 
 <section>
 
-    <!-- TEK PLAYER -->
+    <!-- PLAYER -->
     <div class="player-box">
         <div id="nowPlaying">Seçili şarkı yok</div>
         <audio id="audioPlayer" controls></audio>
     </div>
 
-    <!-- YENİLER -->
-    <div class="category">
-        <h3 onclick="toggleList('yeniler')">Yeniler</h3>
-        <div class="track-list" id="yeniler">
-            <div onclick="playTrack('Yeniler Mix','1.mp3.mp3')">Yeniler Mix</div>
-        </div>
-    </div>
-
-    <!-- ARABESK -->
-    <div class="category">
-        <h3 onclick="toggleList('arabesk')">Arabesk</h3>
-        <div class="track-list" id="arabesk">
-            <div onclick="playTrack('Küllerimden Kalktım – Arabesk','kullerimden-kalktim.mp3.mp3')">
-                Küllerimden Kalktım – Arabesk
-            </div>
-        </div>
-    </div>
-
-    <!-- ARABESK POP -->
-    <div class="category">
-        <h3 onclick="toggleList('arabeskpop')">Arabesk Pop Karışımı</h3>
-        <div class="track-list" id="arabeskpop">
-            <div onclick="playTrack('Dünya Benim Olurdu – Arabesk Pop Karışımı','dunya-benim-olurdu.mp3.mp3')">
-                Dünya Benim Olurdu – Arabesk Pop Karışımı
-            </div>
-        </div>
-    </div>
-
-    <!-- TÜRKÜ -->
-    <div class="category">
-        <h3 onclick="toggleList('turku')">Türkü</h3>
-        <div class="track-list" id="turku">
-            <div onclick="playTrack('Bu Geçer – Türkü','bu-gecer-turku.mp3.mp3')">
-                Bu Geçer – Türkü
-            </div>
-        </div>
-    </div>
-
     <!-- POP -->
     <div class="category">
-        <h3 onclick="toggleList('pop')">Pop</h3>
-        <div class="track-list" id="pop">
-            <div onclick="playTrack('Korkuyorum','pop01.mp3')">Korkuyorum</div>
+        <h3>Pop</h3>
+        <div class="track-list">
+            <div>Korkuyorum</div>
         </div>
+        <button class="buy-btn">Satın Al</button>
     </div>
 
     <!-- SLOW POP -->
     <div class="category">
-        <h3 onclick="toggleList('slowpop')">Slow Pop</h3>
-        <div class="track-list" id="slowpop">
-            <div onclick="playTrack('Kırık Düşler – Slow Pop','kirik-dusler.mp3.mp3')">
-                Kırık Düşler – Slow Pop
-            </div>
+        <h3>Slow Pop</h3>
+        <div class="track-list">
+            <div>Kırık Düşler</div>
         </div>
+        <button class="buy-btn">Satın Al</button>
     </div>
 
-    <!-- MÜZİK ORGANİZASYON -->
-    <section>
-        <h2>🎶 Müzik Organizasyon</h2>
-        <p><strong>🏢 Mağaza & Mekan Açılış Organizasyonları</strong></p>
-        <p>Mekan Açılışları</p>
-        <p>Kurdele Kesimi</p>
-        <p>DJ & Müzik Yayını</p>
-    </section>
+    <!-- ARABESK -->
+    <div class="category">
+        <h3>Arabesk</h3>
+        <div class="track-list">
+            <div>Küllerimden Kalktım</div>
+        </div>
+        <button class="buy-btn">Satın Al</button>
+    </div>
+
+    <!-- MÜZİK ORGANİZASYON (DOĞRU YER) -->
+    <div class="category">
+        <h3>🎶 Müzik Organizasyon</h3>
+        <div class="track-list">
+            <div>🏢 Mağaza & Mekan Açılış Organizasyonları</div>
+            <div>Mekan Açılışları</div>
+            <div>Kurdele Kesimi</div>
+            <div>DJ & Müzik Yayını</div>
+        </div>
+    </div>
 
 </section>
 
@@ -177,26 +151,6 @@ footer{
     📸 @siyahaltinproduksiyonsk<br><br>
     © 2026 Siyah Altın Prodüksiyon · SK
 </footer>
-
-<script>
-const player = document.getElementById("audioPlayer");
-const nowPlaying = document.getElementById("nowPlaying");
-
-function playTrack(name, file){
-    if(player.src.includes(file)){
-        player.paused ? player.play() : player.pause();
-    }else{
-        player.src = file;
-        nowPlaying.textContent = "Çalan Şarkı: " + name;
-        player.play();
-    }
-}
-
-function toggleList(id){
-    const el = document.getElementById(id);
-    el.style.display = el.style.display === "block" ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
