@@ -12,38 +12,48 @@ body{
     color:#d4af37;
     text-align:center;
 }
-header{padding:25px 15px;}
+header{
+    padding:25px 15px;
+}
+nav{
+    margin-top:20px; /* menü üstü boşluk */
+}
 nav a{
     color:#d4af37;
     text-decoration:none;
     margin:0 12px;
     font-weight:bold;
 }
-section{padding:20px 10px;}
-h1,h2{margin:10px 0;}
-.sub{font-size:18px;font-weight:bold;}
-
+section{
+    padding:20px 15px;
+}
+h1,h2{
+    margin:10px 0;
+}
+.sub{
+    font-size:18px;
+    font-weight:bold;
+    margin:12px 0; /* SATIR ARALARI */
+}
 .notice{
-    margin:15px auto;
+    margin:18px auto;
     font-size:17px;
     font-weight:bold;
     max-width:650px;
 }
-
 .track{
     border:1px solid #d4af37;
     padding:10px;
-    margin:12px auto;
+    margin:14px auto;
     max-width:300px;
 }
-
-audio{display:none;}
-
+audio{
+    display:none;
+}
 .progress{
     width:100%;
     margin:8px 0;
 }
-
 .controls{
     margin-top:6px;
 }
@@ -56,7 +66,6 @@ audio{display:none;}
     cursor:pointer;
     font-weight:bold;
 }
-
 .buy{
     display:inline-block;
     margin-top:8px;
@@ -66,15 +75,13 @@ audio{display:none;}
     text-decoration:none;
     font-weight:bold;
 }
-
 #nowPlaying{
-    margin:15px 0;
+    margin:16px 0;
     font-weight:bold;
     font-size:17px;
 }
-
 footer{
-    padding:20px;
+    padding:22px 10px;
     font-size:14px;
 }
 </style>
@@ -87,11 +94,14 @@ footer{
 
 <div class="notice">
 Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri  
-<strong>Serkan Kaynar</strong>’a aittir. Tüm hakları saklıdır.
+<strong>Serkan Kaynar</strong>’a aittir.  
+Tüm hakları saklıdır.
 </div>
 
 <div class="sub">Müzik Prodüksiyon · Açılış Organizasyonları</div>
+
 <div class="sub">Hazır Şarkılar • Beatler • Mixler</div>
+
 <div class="sub">Satışa ve Devire Hazır İçerikler</div>
 
 <nav>
@@ -128,9 +138,11 @@ Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
 <button onclick="next()">⏭</button>
 </div>
 
-<a class="buy" target="_blank"
-href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
-Satın Al</a>
+<a class="buy"
+href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?"
+target="_blank">
+Satın Al
+</a>
 </div>
 
 </section>
@@ -170,7 +182,6 @@ progress.addEventListener("input", () => {
 function next(){
     audio.currentTime = audio.duration;
 }
-
 function prev(){
     audio.currentTime = 0;
 }
