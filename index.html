@@ -50,8 +50,7 @@ audio{
     background:none;
     border:1px solid #d4af37;
     color:#d4af37;
-    padding:4px 12px;
-    margin:0 4px;
+    padding:5px 16px;
     cursor:pointer;
     font-weight:bold;
 }
@@ -110,7 +109,7 @@ Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
 <section>
 <h2>🎧 Yeniler</h2>
 
-<div id="nowPlaying">▶ Şu an çalıyor: —</div>
+<div id="nowPlaying">🎵 Çalan Müzik: —</div>
 
 <div class="track">
 <strong>Kırık Düşler – Slow Pop</strong>
@@ -120,10 +119,7 @@ Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
 </audio>
 
 <div class="controls">
-<button onclick="playTrack(0)">▶ PLAY</button>
-<button onclick="stopTrack(0)">■ STOP</button>
-<button onclick="prevTrack()">◀</button>
-<button onclick="nextTrack()">▶</button>
+<button onclick="togglePlay(0)">▶ PLAY</button>
 </div>
 
 <a class="buy" target="_blank"
@@ -142,40 +138,27 @@ Satın Al</a>
 
 <script>
 const players = document.querySelectorAll("audio");
-let current = 0;
 
-players.forEach((audio, index) => {
-    audio.addEventListener("play", () => {
-        players.forEach(p => { if(p !== audio) p.pause(); });
-        current = index;
-        document.getElementById("nowPlaying").innerText =
-        "▶ Şu an çalıyor: " + audio.dataset.title;
+function togglePlay(i){
+    players.forEach((p, index) => {
+        if(index !== i){
+            p.pause();
+            p.currentTime = 0;
+        }
     });
-});
 
-function playTrack(i){
-    players.forEach(p => p.pause());
-    current = i;
-    players[i].play();
-}
+    const audio = players[i];
 
-function stopTrack(i){
-    players[i].pause();
-    players[i].currentTime = 0;
-    document.getElementById("nowPlaying").innerText =
-    "■ Durduruldu";
-}
-
-function nextTrack(){
-    players[current].pause();
-    current = (current + 1) % players.length;
-    players[current].play();
-}
-
-function prevTrack(){
-    players[current].pause();
-    current = (current - 1 + players.length) % players.length;
-    players[current].play();
+    if(audio.paused){
+        audio.play();
+        document.getElementById("nowPlaying").innerText =
+        "🎵 Çalan Müzik: " + audio.dataset.title;
+    }else{
+        audio.pause();
+        audio.currentTime = 0;
+        document.getElementById("nowPlaying").innerText =
+        "⏹ Müzik durduruldu";
+    }
 }
 </script>
 
