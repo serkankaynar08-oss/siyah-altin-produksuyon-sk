@@ -113,8 +113,17 @@ footer{
         <audio id="audioPlayer" controls></audio>
     </div>
 
-    <!-- KATEGORİLER -->
+    <!-- YENİLER (AYRI KATEGORİ) -->
+    <div class="category">
+        <h3 onclick="toggleList('yeniler')">Yeniler</h3>
+        <div class="track-list" id="yeniler">
+            <div onclick="playTrack('Kırık Düşler – Slow Pop','kirik-dusler.mp3.mp3')">
+                Kırık Düşler – Slow Pop
+            </div>
+        </div>
+    </div>
 
+    <!-- ARABESK -->
     <div class="category">
         <h3 onclick="toggleList('arabesk')">Arabesk</h3>
         <div class="track-list" id="arabesk">
@@ -122,32 +131,32 @@ footer{
         </div>
     </div>
 
+    <!-- ARABESK POP -->
     <div class="category">
         <h3 onclick="toggleList('arabeskpop')">Arabesk Pop</h3>
         <div class="track-list" id="arabeskpop">
-            <div onclick="playTrack('Arabesk Pop Parça 1','arabesk-pop.mp3')">Arabesk Pop Parça 1</div>
+            <div onclick="playTrack('Arabesk Pop Parça 1','arabesk-pop.mp3')">
+                Arabesk Pop Parça 1
+            </div>
         </div>
     </div>
 
+    <!-- TÜRKÜ -->
     <div class="category">
         <h3 onclick="toggleList('turku')">Türkü</h3>
         <div class="track-list" id="turku">
-            <div onclick="playTrack('Türkü Parça 1','turku.mp3')">Türkü Parça 1</div>
+            <div onclick="playTrack('Türkü Parça 1','turku.mp3')">
+                Türkü Parça 1
+            </div>
         </div>
     </div>
 
+    <!-- POP -->
     <div class="category">
         <h3 onclick="toggleList('pop')">Pop</h3>
         <div class="track-list" id="pop">
-            <div onclick="playTrack('Pop Parça 1','pop.mp3')">Pop Parça 1</div>
-        </div>
-    </div>
-
-    <div class="category">
-        <h3 onclick="toggleList('slowpop')">Slow Pop</h3>
-        <div class="track-list" id="slowpop">
-            <div onclick="playTrack('Kırık Düşler – Slow Pop','kirik-dusler.mp3.mp3')">
-                Kırık Düşler – Slow Pop
+            <div onclick="playTrack('Pop Parça 1','pop.mp3')">
+                Pop Parça 1
             </div>
         </div>
     </div>
