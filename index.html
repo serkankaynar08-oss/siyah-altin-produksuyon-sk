@@ -44,15 +44,16 @@ audio{
 }
 
 .controls{
-    margin-top:6px;
+    margin-top:8px;
 }
 .controls button{
     background:none;
     border:1px solid #d4af37;
     color:#d4af37;
-    padding:4px 10px;
-    margin:0 5px;
+    padding:4px 12px;
+    margin:0 4px;
     cursor:pointer;
+    font-weight:bold;
 }
 
 .buy{
@@ -113,13 +114,18 @@ Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
 
 <div class="track">
 <strong>Kırık Düşler – Slow Pop</strong>
-<audio data-title="Kırık Düşler – Slow Pop">
+
+<audio id="audio0" data-title="Kırık Düşler – Slow Pop">
 <source src="1.mp3.mp3" type="audio/mpeg">
 </audio>
+
 <div class="controls">
+<button onclick="playTrack(0)">▶ PLAY</button>
+<button onclick="stopTrack(0)">■ STOP</button>
 <button onclick="prevTrack()">◀</button>
 <button onclick="nextTrack()">▶</button>
 </div>
+
 <a class="buy" target="_blank"
 href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20şarkı%20hakkında%20bilgi%20alabilir%20miyim?">
 Satın Al</a>
@@ -146,6 +152,19 @@ players.forEach((audio, index) => {
         "▶ Şu an çalıyor: " + audio.dataset.title;
     });
 });
+
+function playTrack(i){
+    players.forEach(p => p.pause());
+    current = i;
+    players[i].play();
+}
+
+function stopTrack(i){
+    players[i].pause();
+    players[i].currentTime = 0;
+    document.getElementById("nowPlaying").innerText =
+    "■ Durduruldu";
+}
 
 function nextTrack(){
     players[current].pause();
