@@ -12,50 +12,38 @@ body{
     color:#d4af37;
     text-align:center;
 }
-header{
-    padding:25px 15px;
-}
-nav{
-    margin:15px 0;
-}
+header{padding:25px 15px;}
+nav{margin:15px 0;}
 nav a{
     color:#d4af37;
     text-decoration:none;
     margin:0 10px;
     font-weight:bold;
 }
-section{
-    padding:20px 15px;
-}
-h1,h2,h3{
-    margin:10px 0;
-}
-.sub{
-    font-size:18px;
-    font-weight:bold;
-}
+section{padding:20px 15px;}
+h1,h2,h3{margin:10px 0;}
+.sub{font-size:18px;font-weight:bold;}
 .notice{
-    margin:15px 0;
-    font-size:16px;
+    margin:18px 0;
+    font-size:17px;
     font-weight:bold;
 }
-.track{
+.player-box{
     border:1px solid #d4af37;
-    padding:12px;
-    margin:15px auto;
-    max-width:340px;
+    padding:15px;
+    margin:20px auto;
+    max-width:380px;
 }
 audio{
     width:100%;
-    height:32px;
-    margin-top:8px;
+    margin-top:10px;
 }
-.songlist p{
-    margin:6px 0;
+.playlist p{
     cursor:pointer;
+    margin:8px 0;
     font-weight:bold;
 }
-.songlist p:hover{
+.playlist p:hover{
     text-decoration:underline;
 }
 footer{
@@ -68,71 +56,64 @@ footer{
 <body>
 
 <header>
-    <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
+<h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
 
-    <div class="notice">
-        Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri  
-        <strong>Serkan Kaynar</strong>’a aittir.  
-        Tüm hakları saklıdır.
-    </div>
+<div class="notice">
+Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri  
+<strong>Serkan Kaynar</strong>’a aittir. Tüm hakları saklıdır.
+</div>
 
-    <div class="sub">Müzik Prodüksiyon · Açılış Organizasyonları</div>
-    <div class="sub">Hazır Şarkılar • Beatler • Mixler</div>
-    <div class="sub">Satışa ve Devire Hazır İçerikler</div>
+<div class="sub">Müzik Prodüksiyon · Açılış Organizasyonları</div>
+<div class="sub">Hazır Şarkılar • Beatler • Mixler</div>
+<div class="sub">Satışa ve Devire Hazır İçerikler</div>
 
-    <nav>
-        <a href="#">Müzik</a>
-        <a href="#">Organizasyon</a>
-        <a href="#">İletişim</a>
-    </nav>
+<nav>
+<a href="#">Müzik</a>
+<a href="#">Organizasyon</a>
+<a href="#">İletişim</a>
+</nav>
 </header>
 
 <section>
 
-    <!-- ORGANIZASYON BILGI -->
-    <h2>Mekan Açılışları</h2>
-    <p>Kurdele Kesimi</p>
-    <p>DJ & Müzik Yayını</p>
+<h2>🎧 Karışık Mixler</h2>
 
-    <!-- PLAYER -->
-    <h2>🎧 Yeniler</h2>
+<div class="player-box">
+<strong id="nowPlaying">Şarkı seçiniz</strong>
 
-    <div class="track">
-        <strong id="nowPlaying">Yeniler</strong>
-        <audio id="mainPlayer" controls>
-            <source src="1.mp3.mp3" type="audio/mpeg">
-        </audio>
-    </div>
+<audio id="audioPlayer" controls>
+<source id="audioSource" src="" type="audio/mpeg">
+</audio>
 
-    <!-- LISTE -->
-    <div class="track songlist">
-        <strong>Şarkı Listesi</strong>
+<div class="playlist">
+<p onclick="playSong('1.mp3.mp3','Yeniler')">Yeniler</p>
+<p onclick="playSong('kirik-dusler.mp3.mp3','Kırık Düşler – Slow Pop')">
+Kırık Düşler – Slow Pop
+</p>
+</div>
 
-        <p onclick="playSong('1.mp3.mp3','Yeniler')">
-            ▶ Yeniler
-        </p>
-
-        <p onclick="playSong('slowpop1.mp3','kırık düşler slow pop')">
-            ▶ kırık düşler slow pop
-        </p>
-    </div>
+<a class="buy"
+href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?"
+target="_blank">Satın Al</a>
+</div>
 
 </section>
 
 <footer>
-    📞 WhatsApp: 0507 416 36 05<br>
-    📧 skaynar578@gmail.com<br>
-    📸 @siyahaltinproduksiyonsk<br><br>
-    © 2026 Siyah Altın Prodüksiyon · SK
+📞 WhatsApp: 0507 416 36 05<br>
+📧 skaynar578@gmail.com<br>
+📸 @siyahaltinproduksiyonsk<br><br>
+© 2026 Siyah Altın Prodüksiyon · SK
 </footer>
 
 <script>
-function playSong(file, title){
-    const player = document.getElementById("mainPlayer");
-    const now = document.getElementById("nowPlaying");
-
-    player.src = file;
-    now.innerText = title;
+function playSong(file,title){
+    const player=document.getElementById("audioPlayer");
+    const source=document.getElementById("audioSource");
+    const label=document.getElementById("nowPlaying");
+    source.src=file;
+    label.innerText=title;
+    player.load();
     player.play();
 }
 </script>
