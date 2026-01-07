@@ -16,7 +16,7 @@ header{
     padding:25px 15px;
 }
 nav{
-    margin-top:20px; /* menü üstü boşluk */
+    margin:15px 0;
 }
 nav a{
     color:#d4af37;
@@ -33,55 +33,71 @@ h1,h2{
 .sub{
     font-size:18px;
     font-weight:bold;
-    margin:12px 0; /* SATIR ARALARI */
+    margin-top:8px;
 }
 .notice{
-    margin:18px auto;
-    font-size:17px;
+    margin:15px 0;
+    font-size:16px;
     font-weight:bold;
-    max-width:650px;
 }
-.track{
+.player-box{
     border:1px solid #d4af37;
-    padding:10px;
-    margin:14px auto;
-    max-width:300px;
+    padding:15px;
+    max-width:380px;
+    margin:20px auto;
+}
+#nowPlaying{
+    font-weight:bold;
+    margin-bottom:10px;
 }
 audio{
-    display:none;
-}
-.progress{
     width:100%;
-    margin:8px 0;
+    height:32px;
 }
 .controls{
-    margin-top:6px;
+    margin-top:10px;
 }
 .controls button{
     background:none;
     border:1px solid #d4af37;
     color:#d4af37;
     padding:6px 14px;
-    margin:0 4px;
+    margin:0 5px;
     cursor:pointer;
     font-weight:bold;
 }
+.controls button:hover{
+    background:#d4af37;
+    color:#000;
+}
+.tracklist{
+    max-width:380px;
+    margin:20px auto;
+    text-align:left;
+}
+.tracklist div{
+    padding:8px;
+    border-bottom:1px solid #333;
+    cursor:pointer;
+}
+.tracklist div:hover{
+    background:#1a1a1a;
+}
 .buy{
     display:inline-block;
-    margin-top:8px;
-    padding:6px 18px;
+    margin-top:12px;
+    padding:8px 20px;
     border:1px solid #d4af37;
     color:#d4af37;
     text-decoration:none;
     font-weight:bold;
 }
-#nowPlaying{
-    margin:16px 0;
-    font-weight:bold;
-    font-size:17px;
+.buy:hover{
+    background:#d4af37;
+    color:#000;
 }
 footer{
-    padding:22px 10px;
+    padding:20px 10px;
     font-size:14px;
 }
 </style>
@@ -90,61 +106,56 @@ footer{
 <body>
 
 <header>
-<h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
+    <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
 
-<div class="notice">
-Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri  
-<strong>Serkan Kaynar</strong>’a aittir.  
-Tüm hakları saklıdır.
+    <div class="notice">
+        Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri  
+        <strong>Serkan Kaynar</strong>’a aittir.  
+        Tüm hakları saklıdır.
+    </div>
+
+    <div class="sub">Müzik Prodüksiyon · Açılış Organizasyonları</div>
+    <div class="sub">Hazır Şarkılar • Beatler • Mixler</div>
+    <div class="sub">Satışa ve Devire Hazır İçerikler</div>
+
+    <nav>
+        <a href="#">Müzik</a>
+        <a href="#">Organizasyon</a>
+        <a href="#">İletişim</a>
+    </nav>
+</header>
+
+<section>
+
+<h2>🎧 Yeniler Mix</h2>
+
+<div class="player-box">
+    <div id="nowPlaying">Çalan: Yeniler Mix</div>
+
+    <audio id="audioPlayer"></audio>
+
+    <div class="controls">
+        <button onclick="prevTrack()">⏮</button>
+        <button onclick="togglePlay()">▶ / ⏸</button>
+        <button onclick="nextTrack()">⏭</button>
+    </div>
+
+    <a class="buy"
+       href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?"
+       target="_blank">
+       Satın Al
+    </a>
 </div>
 
-<div class="sub">Müzik Prodüksiyon · Açılış Organizasyonları</div>
+<div class="tracklist" id="trackList"></div>
 
-<div class="sub">Hazır Şarkılar • Beatler • Mixler</div>
-
-<div class="sub">Satışa ve Devire Hazır İçerikler</div>
-
-<nav>
-<a href="#">Müzik</a>
-<a href="#">Organizasyon</a>
-<a href="#">İletişim</a>
-</nav>
-</header>
+</section>
 
 <section>
 <h2>🏢 Mekan Açılış Organizasyonları</h2>
 <p>Mekan Açılışları</p>
 <p>Kurdele Kesimi</p>
 <p>DJ & Müzik Yayını</p>
-</section>
-
-<section>
-<h2>🎧 Yeniler</h2>
-
-<div id="nowPlaying">🎵 Çalan Müzik: —</div>
-
-<div class="track">
-<strong>Yeniler Mix</strong>
-
-<audio id="audio" data-title="Yeniler Mix">
-<source src="1.mp3.mp3" type="audio/mpeg">
-</audio>
-
-<input type="range" id="progress" class="progress" value="0">
-
-<div class="controls">
-<button onclick="prev()">⏮</button>
-<button onclick="playPause()" id="playBtn">▶</button>
-<button onclick="next()">⏭</button>
-</div>
-
-<a class="buy"
-href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?"
-target="_blank">
-Satın Al
-</a>
-</div>
-
 </section>
 
 <footer>
@@ -155,36 +166,56 @@ Satın Al
 </footer>
 
 <script>
-const audio = document.getElementById("audio");
-const progress = document.getElementById("progress");
-const playBtn = document.getElementById("playBtn");
-const nowText = document.getElementById("nowPlaying");
+const tracks = [
+    { name: "Yeniler Mix", file: "1.mp3.mp3" },
+    { name: "Arabesk Mix", file: "arabesk.mp3" },
+    { name: "Arabesk Pop Mix", file: "arabesk-pop.mp3" },
+    { name: "Türkü Mix", file: "turku.mp3" },
+    { name: "Pop Mix", file: "pop.mp3" },
+    { name: "Slow Pop Mix", file: "slow-pop.mp3" }
+];
 
-function playPause(){
+let currentTrack = 0;
+const audio = document.getElementById("audioPlayer");
+const nowPlaying = document.getElementById("nowPlaying");
+const list = document.getElementById("trackList");
+
+tracks.forEach((t, i) => {
+    const div = document.createElement("div");
+    div.textContent = t.name;
+    div.onclick = () => playTrack(i);
+    list.appendChild(div);
+});
+
+function playTrack(index){
+    currentTrack = index;
+    audio.src = tracks[index].file;
+    audio.play();
+    nowPlaying.textContent = "Çalan: " + tracks[index].name;
+}
+
+function togglePlay(){
     if(audio.paused){
         audio.play();
-        playBtn.innerText = "⏸";
-        nowText.innerText = "🎵 Çalan Müzik: " + audio.dataset.title;
     }else{
         audio.pause();
-        playBtn.innerText = "▶";
     }
 }
 
-audio.addEventListener("timeupdate", () => {
-    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
-});
-
-progress.addEventListener("input", () => {
-    audio.currentTime = (progress.value / 100) * audio.duration;
-});
-
-function next(){
-    audio.currentTime = audio.duration;
+function nextTrack(){
+    currentTrack = (currentTrack + 1) % tracks.length;
+    playTrack(currentTrack);
 }
-function prev(){
-    audio.currentTime = 0;
+
+function prevTrack(){
+    currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+    playTrack(currentTrack);
 }
+
+audio.addEventListener("ended", nextTrack);
+
+// İlk şarkı hazır
+playTrack(0);
 </script>
 
 </body>
