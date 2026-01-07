@@ -108,17 +108,18 @@ Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
 
 <div id="nowPlaying">🎵 Çalan Müzik: —</div>
 
+<!-- ŞARKI 1 -->
 <div class="track">
 <strong>Kırık Düşler – Slow Pop</strong>
 
-<audio id="audio0" data-title="Kırık Düşler – Slow Pop">
+<audio class="player" data-title="Kırık Düşler – Slow Pop">
 <source src="1.mp3.mp3" type="audio/mpeg">
 </audio>
 
 <div class="controls">
-<button onclick="seekBack(0)">⏮</button>
-<button onclick="togglePlay(0)">▶</button>
-<button onclick="seekForward(0)">⏭</button>
+<button onclick="prevTrack()">⏮</button>
+<button onclick="togglePlay()">▶</button>
+<button onclick="nextTrack()">⏭</button>
 </div>
 
 <a class="buy" target="_blank"
@@ -136,36 +137,42 @@ Satın Al</a>
 </footer>
 
 <script>
-const players = document.querySelectorAll("audio");
+const players = document.querySelectorAll(".player");
+const playBtn = document.querySelector(".controls button:nth-child(2)");
+const nowText = document.getElementById("nowPlaying");
+let current = 0;
 
-function togglePlay(i){
-    players.forEach((p, index) => {
-        if(index !== i){
-            p.pause();
-        }
-    });
+function updateText(){
+    nowText.innerText = "🎵 Çalan Müzik: " + players[current].dataset.title;
+}
 
-    const audio = players[i];
+function togglePlay(){
+    const audio = players[current];
 
     if(audio.paused){
+        players.forEach(p => p.pause());
         audio.play();
-        document.getElementById("nowPlaying").innerText =
-        "🎵 Çalan Müzik: " + audio.dataset.title;
+        playBtn.innerText = "⏸";
+        updateText();
     }else{
-        audio.pause(); // başa ALMAZ
-        document.getElementById("nowPlaying").innerText =
-        "⏸ Duraklatıldı: " + audio.dataset.title;
+        audio.pause();
+        playBtn.innerText = "▶";
+        nowText.innerText = "⏸ Duraklatıldı: " + audio.dataset.title;
     }
 }
 
-function seekBack(i){
-    const audio = players[i];
-    audio.currentTime = Math.max(0, audio.currentTime - 10);
+function nextTrack(){
+    players[current].pause();
+    current = (current + 1) % players.length;
+    playBtn.innerText = "▶";
+    togglePlay();
 }
 
-function seekForward(i){
-    const audio = players[i];
-    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+function prevTrack(){
+    players[current].pause();
+    current = (current - 1 + players.length) % players.length;
+    playBtn.innerText = "▶";
+    togglePlay();
 }
 </script>
 
