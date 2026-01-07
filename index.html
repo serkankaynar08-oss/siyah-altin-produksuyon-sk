@@ -2,70 +2,114 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Siyah Altın Prodüksiyon · SK</title>
 
 <style>
 body{
     margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0b0b0b;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#000;
     color:#d4af37;
     text-align:center;
 }
+
 header{
-    padding:25px 15px;
+    position:relative;
+    padding:40px 20px 20px;
 }
-nav{
-    margin:15px 0;
+
+.logo-left,
+.logo-right{
+    position:absolute;
+    top:15px;
+    width:90px;
 }
-nav a{
-    color:#d4af37;
-    text-decoration:none;
-    margin:0 10px;
-    font-weight:bold;
+
+.logo-left{ left:15px; }
+.logo-right{ right:15px; }
+
+.logo-left img,
+.logo-right img{
+    width:100%;
+    height:auto;
 }
-section{
-    padding:20px 15px;
+
+h1{
+    margin:0;
+    font-size:34px;
+    letter-spacing:2px;
 }
-h1,h2,h3{
-    margin:10px 0;
-}
-.sub{
-    font-size:18px;
-    font-weight:bold;
-}
-.notice{
-    margin:15px 0;
+
+.subtitle{
+    margin-top:8px;
     font-size:16px;
     font-weight:bold;
 }
+
+.notice{
+    margin-top:12px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav{
+    margin-top:25px;
+    font-size:16px;
+    font-weight:bold;
+}
+
+nav span{
+    margin:0 12px;
+}
+
+section{
+    margin:50px auto;
+    max-width:900px;
+    padding:0 20px;
+}
+
+.section-title{
+    font-size:24px;
+    margin-bottom:25px;
+    border-bottom:1px solid #d4af37;
+    padding-bottom:10px;
+}
+
 .track{
-    border:1px solid #d4af37;
-    padding:15px;
-    margin:15px auto;
-    max-width:360px;
+    margin-bottom:25px;
 }
+
 audio{
-    width:100%;
-    height:30px;
-    margin-top:8px;
+    width:280px;
+    height:32px;
 }
-.buy{
+
+.buy-btn{
     display:inline-block;
-    margin-top:10px;
-    padding:8px 20px;
+    margin-top:8px;
+    padding:6px 14px;
     border:1px solid #d4af37;
     color:#d4af37;
     text-decoration:none;
-    font-weight:bold;
+    font-size:14px;
 }
-.buy:hover{
+
+.buy-btn:hover{
     background:#d4af37;
     color:#000;
 }
-footer{
-    padding:20px 10px;
+
+.footer-note{
+    margin:50px 0 20px;
     font-size:14px;
+    font-weight:bold;
+}
+
+.organizasyon{
+    margin-top:25px;
+    font-size:16px;
+    line-height:1.8;
 }
 </style>
 </head>
@@ -73,92 +117,64 @@ footer{
 <body>
 
 <header>
+    <!-- SOL ÜST LOGO -->
+    <div class="logo-left">
+        <img src="logo.png" alt="Siyah Altın Prodüksiyon Logo">
+    </div>
+
+    <!-- SAĞ ÜST LOGO -->
+    <div class="logo-right">
+        <img src="logo.png" alt="Siyah Altın Prodüksiyon Logo">
+    </div>
+
     <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
+    <div class="subtitle">Müzik Prodüksiyon · Açılış Organizasyonları</div>
 
     <div class="notice">
         Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri  
-        <strong>Serkan Kaynar</strong>’a aittir.  
-        Tüm hakları saklıdır.
-    </div>
-
-    <div class="sub">
-        Müzik Prodüksiyon · Açılış Organizasyonları
-    </div>
-
-    <div class="sub">
-        Hazır Şarkılar • Beatler • Mixler
-    </div>
-
-    <div class="sub">
-        Satışa ve Devire Hazır İçerikler
+        <strong>Serkan Kaynar</strong>’a aittir. Tüm hakları saklıdır.
     </div>
 
     <nav>
-        <a href="#">Müzik</a>
-        <a href="#">Organizasyon</a>
-        <a href="#">İletişim</a>
+        <span>Müzik</span>
+        <span>Organizasyon</span>
+        <span>İletişim</span>
     </nav>
 </header>
 
 <section>
-    <h2>🎧 Karışık Mixler</h2>
+    <div class="section-title">🎧 Karışık Mixler</div>
 
     <div class="track">
-        <strong>Karışık Mix</strong>
+        <strong>Karışık Mix</strong><br>
         <audio controls>
-            <source src="1.mp3.mp3" type="audio/mpeg">
-        </audio>
-        <a class="buy"
-           href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?"
-           target="_blank">
-           Satın Al
+            <source src="1.mp3" type="audio/mpeg">
+        </audio><br>
+        <a class="buy-btn" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?">
+            Satın Al
         </a>
-    </div>
-
-    <div class="track">
-        <strong>Arabesk</strong>
-        <audio controls></audio>
-        <a class="buy" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
-    </div>
-
-    <div class="track">
-        <strong>Arabesk Pop</strong>
-        <audio controls></audio>
-        <a class="buy" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
-    </div>
-
-    <div class="track">
-        <strong>Türkü</strong>
-        <audio controls></audio>
-        <a class="buy" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
-    </div>
-
-    <div class="track">
-        <strong>Pop</strong>
-        <audio controls></audio>
-        <a class="buy" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
-    </div>
-
-    <div class="track">
-        <strong>Slow Pop</strong>
-        <audio controls></audio>
-        <a class="buy" href="https://wa.me/905074163605?text=Merhaba,%20Siyah%20Altın%20Prodüksiyon%20web%20sitesi%20üzerinden%20yazıyorum.%20Bu%20içerik%20hakkında%20bilgi%20alabilir%20miyim?" target="_blank">Satın Al</a>
     </div>
 </section>
 
 <section>
-    <h2>🏢 Mekan Açılış Organizasyonları</h2>
-    <p>Mekan Açılışları</p>
-    <p>Kurdele Kesimi</p>
-    <p>DJ & Müzik Yayını</p>
+    <div class="section-title">🏢 Mekan Açılış Organizasyonları</div>
+    <div class="organizasyon">
+        Mekan Açılışları<br>
+        Kurdele Kesimi<br>
+        DJ & Müzik Yayını
+    </div>
 </section>
 
-<footer>
-    📞 WhatsApp: 0507 416 36 05<br>
-    📧 skaynar578@gmail.com<br>
-    📸 @siyahaltinproduksiyonsk<br><br>
-    © 2026 Siyah Altın Prodüksiyon · SK
-</footer>
+<section>
+    <div class="section-title">📩 İletişim</div>
+    WhatsApp: <strong>0507 416 36 05</strong><br><br>
+    E-posta: <strong>skaynar578@gmail.com</strong><br><br>
+    Instagram: <strong>@siyahaltinproduksiyonsk</strong>
+</section>
+
+<div class="footer-note">
+© 2026 Siyah Altın Prodüksiyon · SK
+</div>
 
 </body>
 </html>
