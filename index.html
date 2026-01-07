@@ -1,118 +1,121 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>SİYAH ALTIN PRODÜKSİYON · SK</title>
+<meta charset="UTF-8">
+<title>SİYAH ALTIN PRODÜKSİYON · SK</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000;
-      color: #d4af37;
-      padding: 20px;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#000;
+  color:#d4af37;
+}
 
-    h1, h2 {
-      text-align: center;
-      letter-spacing: 1px;
-    }
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
 
-    nav {
-      text-align: center;
-      margin: 20px 0;
-      font-weight: bold;
-    }
+h1,h2{
+  text-align:center;
+  margin:10px 0;
+}
 
-    nav span {
-      margin: 0 15px;
-    }
+.menu{
+  text-align:center;
+  margin:15px 0;
+  font-weight:bold;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
+.menu span{
+  margin:0 12px;
+}
 
-    .acilis-sag {
-      float: right;
-      width: 40%;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 1.05rem;
-    }
+.content{
+  display:flex;
+  gap:30px;
+}
 
-    .acilis-sag p {
-      margin: 6px 0;
-    }
+.left{
+  width:60%;
+}
 
-    .clear {
-      clear: both;
-    }
+.right{
+  width:40%;
+  text-align:center;
+}
 
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
+footer{
+  text-align:center;
+  margin:40px 0 20px;
+  font-size:0.9rem;
+}
 
-    @media (max-width: 768px) {
-      .acilis-sag {
-        float: none;
-        width: 100%;
-        margin-top: 30px;
-      }
-    }
-  </style>
+@media(max-width:768px){
+  .content{
+    flex-direction:column;
+  }
+  .left,.right{
+    width:100%;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
+<div class="container">
 
-  <p style="text-align:center; font-size:1.1rem;">
-    Müzik Prodüksiyon · Açılış Organizasyonları
-  </p>
+<h1>SİYAH ALTIN PRODÜKSİYON · SK</h1>
 
-  <p style="text-align:center; font-weight:bold;">
-    Hazır Şarkılar • Beatler • Mixler<br>
-    Satışa ve Devire Hazır İçerikler
-  </p>
+<p style="text-align:center;">
+Müzik Prodüksiyon · Açılış Organizasyonları
+</p>
 
-  <nav>
-    <span>Müzik</span>
-    <span>Organizasyon</span>
-    <span>İletişim</span>
-  </nav>
+<p style="text-align:center;font-weight:bold;">
+Hazır Şarkılar • Beatler • Mixler<br>
+Satışa ve Devire Hazır İçerikler
+</p>
 
-  <div class="container">
+<div class="menu">
+  <span>Müzik</span>
+  <span>Organizasyon</span>
+  <span>İletişim</span>
+</div>
 
-    <h2>Hoş Geldiniz</h2>
-    <p style="text-align:center;">
-      Siyah Altın Prodüksiyon; beat, hazır şarkı, mix üretimi ve
-      mekan açılış organizasyonlarında profesyonel çözümler sunar.
-    </p>
+<h2>Hoş Geldiniz</h2>
 
+<p style="text-align:center;">
+Siyah Altın Prodüksiyon; beat, hazır şarkı, mix üretimi ve
+mekan açılış organizasyonlarında profesyonel çözümler sunar.
+</p>
+
+<div class="content">
+
+  <div class="left">
     <h2>🎧 Karışık Mixler</h2>
-    <p style="text-align:center;">Karışık Mix</p>
-
-    <div class="acilis-sag">
-      <h2>🏢 Mekan Açılış Organizasyonları</h2>
-      <p>Mekan Açılışları</p>
-      <p>Kurdele Kesimi</p>
-      <p>DJ & Müzik Yayını</p>
-    </div>
-
-    <div class="clear"></div>
-
+    <p>Karışık Mix</p>
   </div>
 
-  <footer>
-    Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
-    Serkan Kaynar’a aittir. Tüm hakları saklıdır.
-    <br><br>
-    © 2026 Siyah Altın Prodüksiyon · SK
-  </footer>
+  <div class="right">
+    <h2>🏢 Mekan Açılış Organizasyonları</h2>
+    <p>Mekan Açılışları</p>
+    <p>Kurdele Kesimi</p>
+    <p>DJ & Müzik Yayını</p>
+  </div>
+
+</div>
+
+<footer>
+Yayınlanan ve yayınlanacak olan eserlerin söz ve müzikleri
+Serkan Kaynar’a aittir. Tüm hakları saklıdır.
+<br><br>
+© 2026 Siyah Altın Prodüksiyon · SK
+</footer>
+
+</div>
 
 </body>
 </html>
